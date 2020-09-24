@@ -12,6 +12,16 @@ public class UnitTest {
     @Test
     public void TestText() {
         Unit s = new Unit();
-        Assert.assertEquals(s.TestText(), "HelloWorld");
+        Assert.assertEquals(Unit.TestText(), "HelloWorld");
+    }
+    @Test
+    public void TestSum2() {
+        Unit s = new Unit();
+        Assert.assertNotEquals(s.Sum2(2, 2), 5);
+    }
+    @Test
+    public void TestText2() {
+        Unit s = new Unit();
+        Assert.assertNotEquals(Unit.TestText2(), "ПриветМир");
     }
 }
