@@ -35,6 +35,20 @@ public class SimpleTest {
         Assert.assertEquals(jsonStr.contains("unknown"), true);
     }
 
+    @Test
+    public void loginWithUser() {
 
+        String response =
+                given()
+                        .param("username", "alexnat")
+                        .param("password", "123456")
+                        .when()
+                            .get("https://petstore.swagger.io/v2/user/login")
+                        .then()
+                            .statusCode(200)
+                            .log() .body()
+                            .extract() .response() .asString();
 
+        Assert.assertEquals(response.contains("logged in user session"), true);
+    }
 }
